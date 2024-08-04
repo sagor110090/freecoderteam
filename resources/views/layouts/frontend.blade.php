@@ -26,7 +26,7 @@
     <body class="dark:bg-black">
         <x-frontend.header />
         {{ $slot }}
-
+        <x-frontend.footer />
         <div class="fixed bottom-8 right-8 z-[99]"></div>
     </body>
 </html>
