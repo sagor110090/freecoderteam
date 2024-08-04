@@ -14,7 +14,7 @@
                         data-nimg="1"
                         class="w-full dark:hidden"
                         loading="lazy"
-                        style="color: transparent"
+                        style="filter: invert(100%);"
                     />
                     <img
                         alt="logo"
@@ -29,12 +29,17 @@
                     />
                 </a>
             </div>
-            <div class="flex items-center justify-between w-full px-4">
+            <div class="flex items-center justify-between w-full px-4"
+                x-data="{
+                    open: false,
+                }"
+                >
                 <div>
                     <button
                         id="navbarToggler"
                         aria-label="Mobile Menu"
                         class="ring-primary absolute right-4 top-1/2 block translate-y-[-50%] rounded-lg px-3 py-[6px] focus:ring-2 lg:hidden"
+                        x-on:click="open = !open"
                     >
                         <span
                             class="relative my-1.5 block h-0.5 w-[30px] bg-black transition-all duration-300 dark:bg-white"
@@ -48,7 +53,8 @@
                     </button>
                     <nav
                         id="navbarCollapse"
-                        class="navbar border-body-color/50 dark:border-body-color/20 dark:bg-dark invisible absolute right-0 top-[120%] z-30 w-[250px] rounded border-[.5px] bg-white px-6 py-4 opacity-0 duration-300 lg:visible lg:static lg:w-auto lg:border-none lg:!bg-transparent lg:p-0 lg:opacity-100"
+                        class="navbar border-body-color/50 dark:border-body-color/20 dark:bg-dark invisible absolute right-0 top-[80%] z-30 w-[250px] rounded border-[.5px] bg-white px-6 py-4 opacity-0 duration-300 lg:visible lg:static lg:w-auto lg:border-none lg:!bg-transparent lg:p-0 lg:opacity-100"
+                        :class="{ 'visible opacity-100': open, 'invisible opacity-0': !open }"
                     >
                         <ul class="block lg:flex lg:space-x-12">
                             <li class="relative group">
@@ -122,9 +128,27 @@
                     >
                         Sign Up
                     </a>
-                    <div>
+                    <div x-data="{
+                        darkMode: localStorage.getItem('darkMode') === 'true',
+                        toggleDarkMode() {
+                            this.darkMode = !this.darkMode;
+                            localStorage.setItem('darkMode', this.darkMode);
+                            document.documentElement.classList.toggle('dark');
+                            document.documentElement.style.colorScheme = this.darkMode ? 'dark' : 'light';
+                        },
+                        init(){
+                            if (this.darkMode) {
+                                document.documentElement.classList.add('dark');
+                                document.documentElement.style.colorScheme = 'dark';
+                            }else{
+                                document.documentElement.classList.remove('dark');
+                                document.documentElement.style.colorScheme = 'light';
+                            }
+                        }
+                    }">
                         <button
                             class="flex items-center justify-center text-black rounded-full cursor-pointer bg-gray-2 dark:bg-dark-bg h-9 w-9 dark:text-white md:h-14 md:w-14"
+                            x-on:click="toggleDarkMode()"
                         >
                             <svg
                                 viewBox="0 0 23 23"

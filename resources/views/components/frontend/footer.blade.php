@@ -4,8 +4,8 @@
             <div class="w-full px-4 md:w-1/2 lg:w-4/12 xl:w-5/12">
                 <div class="mb-12 max-w-[360px] lg:mb-16">
                     <a class="inline-block mb-8" href="index.html">
-                        <img alt="logo" src="images/logo/logo-2.svg" width="140" height="30" decoding="async"
-                            data-nimg="1" class="w-full dark:hidden" loading="lazy" style="color: transparent" />
+                        <img alt="logo" src="/images/logo.png" width="140" height="30" decoding="async"
+                            data-nimg="1" class="w-[50px] dark:hidden" loading="lazy" style=" filter: invert(100%);" />
                         <img alt="logo" src="/images/logo.png" width="140" height="30" decoding="async"
                             data-nimg="1" class="hidden w-[50px] dark:block" loading="lazy" style="color: transparent" />
                     </a>
