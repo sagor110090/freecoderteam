@@ -7,7 +7,8 @@
                         <img alt="logo" src="/images/logo.png" width="140" height="30" decoding="async"
                             data-nimg="1" class="w-[50px] dark:hidden" loading="lazy" style=" filter: invert(100%);" />
                         <img alt="logo" src="/images/logo.png" width="140" height="30" decoding="async"
-                            data-nimg="1" class="hidden w-[50px] dark:block" loading="lazy" style="color: transparent" />
+                            data-nimg="1" class="hidden w-[50px] dark:block" loading="lazy"
+                            style="color: transparent" />
                     </a>
                     <p class="text-base font-medium leading-relaxed text-body-color mb-9">
                         We are committed to providing excellent services and support. If you have any questions or need
@@ -149,10 +150,7 @@
     <div class="py-8 bg-primary/10">
         <div class="container">
             <p class="text-base text-center text-body-color dark:text-white">
-                Template by UIdeck and
-                <a href="https://nextjstemplates.com/" rel="nofollow noopener">
-                    Next.js Templates
-                </a>
+                © 2024 Freecoderteam. All Rights Reserved.
             </p>
         </div>
     </div>
