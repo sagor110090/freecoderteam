@@ -28,8 +28,17 @@ Route::get('/dashboard', function () {
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', App\Livewire\Profile\Index::class)->name('profile.edit');
+    Route::get('categories', App\Livewire\Category\Index::class)->name('categories.index');
+    Route::get('tags', App\Livewire\Tag\Index::class)->name('tags.index');
+    Route::get('posts', App\Livewire\Post\Index::class)->name('posts.index');
+    Route::get('posts/create', App\Livewire\Post\CreatePost::class)->name('posts.create');
+    Route::get('posts/{id}/edit', App\Livewire\Post\EditPost::class)->name('posts.edit');
+    Route::get('pages', App\Livewire\Page\Index::class)->name('pages.index');
+    Route::get('pages/create', App\Livewire\Page\CreatePage::class)->name('pages.create');
+    Route::get('pages/{id}/edit', App\Livewire\Page\EditPage::class)->name('pages.edit');
+    Route::post('image-upload', App\Http\Controllers\Admin\ImageUploadController::class)->name('ckeditor.image-upload');
 });
 
-// require __DIR__ . '/auth.php';
+require __DIR__ . '/auth.php';
 
 //Route Hooks - Do not delete//

@@ -15,24 +15,34 @@
         <wireui:scripts />
         @vite(["resources/css/app.css", "resources/js/app.js"])
         @livewireStyles
+        @bukStyles
+        <!-- Adds the Core Table Styles -->
         @rappasoftTableStyles
+
+        <!-- Adds any relevant Third-Party Styles (Used for DateRangeFilter (Flatpickr) and NumberRangeFilter) -->
         @rappasoftTableThirdPartyStyles
+
+        <!-- Adds the Core Table Scripts -->
+        @rappasoftTableScripts
+
+        <!-- Adds any relevant Third-Party Scripts (e.g. Flatpickr) -->
+        @rappasoftTableThirdPartyScripts
     </head>
 
     <body>
         <div
             x-data="{ sidebarOpen: false }"
-            class="font-roboto flex h-screen bg-slate-200"
+            class="flex h-screen font-roboto bg-slate-200"
         >
             @include("layouts.navigation")
 
-            <div class="flex flex-1 flex-col overflow-hidden">
+            <div class="flex flex-col flex-1 overflow-hidden">
                 @include("layouts.header")
 
                 <main
-                    class="flex-1 overflow-y-auto overflow-x-hidden bg-slate-200"
+                    class="flex-1 overflow-x-hidden overflow-y-auto bg-slate-200"
                 >
-                    <div class="container mx-auto px-6 py-8">
+                    <div class="container px-6 py-8 mx-auto">
                         @if (isset($header))
                             <h3 class="mb-4 text-3xl font-medium text-gray-700">
                                 {{ $header }}
@@ -50,5 +60,6 @@
         <x-livewire-alert::scripts />
         @rappasoftTableScripts
         @rappasoftTableThirdPartyScripts
+        @bukScripts
     </body>
 </html>

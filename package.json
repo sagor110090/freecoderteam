@@ -19,7 +19,10 @@
         "vite": "^5.0.0"
     },
     "dependencies": {
+        "animate.css": "^4.1.1",
+        "aos": "^3.0.0-beta.6",
         "sweetalert2": "^11.10.5",
+        "wow.js": "^1.2.2",
         "wowjs": "^1.1.3"
     }
 }
